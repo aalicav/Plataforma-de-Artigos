@@ -1,0 +1,22 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <% if(Sections.length > 0) { %>
+      <div class="responsive-table">
+          <% Sections.forEach(async function (corpo) { %>
+           <h1><%= corpo.nameSection %></h1>
+           <% titulos.forEach( function (titulo){ %>
+            <a href="/texto/show/<%= titulo._id %>"><%= titulo.titulo %></a>
+          <%})%>
+          <% }); %>
+      </div>
+      <% };%>
+    
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>

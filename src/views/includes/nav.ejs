@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand abs rod d-flex justify-content-center" href="/">    
+    <img src="../../../public/assets/img/logo-pina.png" width="120" height="120" class="img-fluid d-inline-block align-top" alt="">
+    <div class="ml-5 d-flex flex-column justify-content-center">
+      <h1>Vinicius Pina</h1>
+      <p>Serviços Juridicos</p>
+    </div>
+   
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <% if(user){%>
+      <li class="nav-item">
+        <a class="nav-link" href="/texto/index">Cadastrar texto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/section/showAll"><button type="button" class="btn btn-secondary btn-lg">Cadastrar seção</button>
+        </a>
+      </li>
+      <%}%>
+      <% if(user) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/login/logout"><button type="button" class="btn btn-secondary">Sair</button>
+          </a>
+        </li>
+      <% } else { %>
+        <div class="d-flex justify-content-center>
+        <li class="nav-item">
+          <a class="nav-link" href="/login/index"><button type="button" class="btn btn-secondary">Entrar</button></a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown mt-2">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Artigos
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% texts.forEach(function(texto){%>
+    <a class="dropdown-item" href="/texto/show/<%= texto._id %>"><%= texto.titulo %></a>
+    <% }) %>
+  </div>
+          </div>
+        </li>
+        <li class="nav-item">  
+          <a class="nav-link" href="/">
+            <button type="button" class="btn btn-secondary">Áreas de atuação</button>
+        </a>
+      </li>
+      <li class="nav-item">  
+        <a class="nav-link" href="/section/show">
+          <button type="button" class="btn btn-secondary">Artigos por seção</button>
+      </a>
+    </li>
+      </div>
+        <% } %>
+
+    </ul>
+  </div>
+</nav>
+

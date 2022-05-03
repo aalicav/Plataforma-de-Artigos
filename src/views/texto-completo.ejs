@@ -1,0 +1,45 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<div class="container bg-color">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3 translate-middle">
+
+      <%- include('includes/messages') %>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/">Home</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#">Library</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <a href="#">Data</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </nav> 
+      <div class="responsive-table">
+           <h1 class="text-center"><%= textos.titulo %></h1> 
+            <h3 class="text-center lead"><%= textos.subtitulo %></h3>
+            <%- textos.corpo %>
+            <% if(user){%>
+           <a class="text-danger" href="/texto/delete/<%=  textos._id %>"><button type="button" class="btn btn-danger">Excluir</button>
+           </a>
+           <a href="/texto/index/<%= textos._id %>"><button type="button" class="btn btn-primary">Editar</button>
+           </a>           
+           <% } %>
+      </div>
+    </div>
+    
+    <div class="col-lg-2"></div>
+  </div>
+</div> 
+
+<%- include('includes/footer') %>

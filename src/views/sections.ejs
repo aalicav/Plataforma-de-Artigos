@@ -1,0 +1,50 @@
+<%- include('includes/head') %>
+  <%- include('includes/nav') %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8 my-3">
+          <h1 class="text-center">SEÇÕES</h1>
+          <p class="text-center lead">Cadastre uma seção abaixo</p>
+
+          <%- include('includes/messages') %>
+
+            <% if(Section._id) { %>
+              <form action="/section/edit/<%= Section._id %>" method="POST">
+                <% } else { %>
+                  <form action="/section/register" method="POST">
+                    <% } %>
+                      <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                      <div class="form-group">
+                        <label>Nome da seção</label>
+                        <input value="<%= Section.nameSection %>" type="text" class="form-control" name="nameSection">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                  </form>
+
+        </div>
+        <% if(Sections.length> 0) { %>
+          <div class="responsive-table">
+            <% Sections.forEach(corpo=> { %>
+              <h1>
+                <%= corpo.nameSection %>
+              </h1>
+              <% if(user){%>
+                <a href="/texto/index/<%= corpo._id %>">Editar</a>
+                <% if (id) {%>
+                <a href="/section/addID/<%= corpo._id %>/<%= id %>">Adicionar a esta
+                  seção</a>
+                <% } %>
+                <a class="text-danger" href="/section/delete/<%=  corpo._id %>">Excluir</a>
+                <% } %>
+                  <% }); %>
+
+          </div>
+          <% };%>
+
+            <div class="col-lg-2"></div>
+      </div>
+    </div>
+
+    <%- include('includes/footer') %>
