@@ -1,30 +1,3 @@
-.efeito-vidro {
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(13.5px);
-  -webkit-backdrop-filter: blur(13.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  width: 300px;
-  height: 200px;
-  padding: 15px;
-  margin: 15px;
-}
-
-.bg-color {
-  background-color: #d5dee2;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#titulo {
-  color: orange
-}
-
-.carousel_item>img {
-  max-width: 799px;
-  max-height: 512px;
-}
-
 .whatsapp {
   position: fixed;
   width: 60px;
@@ -39,3 +12,8 @@
   box-shadow: 1px 1px 2px #888;
   z-index:1000;
 }
+
+.featurette{
+  margin-left:auto;
+}
+

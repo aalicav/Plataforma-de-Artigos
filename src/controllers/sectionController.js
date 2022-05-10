@@ -46,6 +46,15 @@ exports.add = async (req, res) => {
   req.session.save(() => res.redirect('back'))
 }
 
+exports.remove = async (req, res) => {
+  const idSection = await req.params.id;
+  const idText = await req.params.hash;
+  const section = new Section(req.body)
+  section.removeText(idSection, idText)
+  req.flash('success', "Texto removido desta seção")
+  req.session.save(() => res.redirect('back'))
+}
+
 exports.delete = async (req, res) => {
   const id = req.params.id;
   const section = new Section(req.body);
@@ -71,7 +80,6 @@ exports.show = async (req, res) => {
       if(textos) arr.push(textos)
     }
   }
- console.log(arr)
   res.render('section-articles', {
     Sections:secoes,
     titulos: arr,

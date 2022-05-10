@@ -37,6 +37,9 @@ route.post('/section/register', sectionController.create)
 route.get('/section/delete/:id', sectionController.delete)
 route.get('/section/add/:id', sectionController.showAll)
 route.get('/section/addId/:id/:hash', sectionController.add)
+route.get('/section/removeId/:id/:hash', sectionController.remove)
 route.get('/section/show/', sectionController.show)
-
+route.get('/competencias',(req,res)=>{
+  res.render('competencias')
+})
 module.exports = route;

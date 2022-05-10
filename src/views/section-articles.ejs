@@ -1,22 +1,41 @@
 <%- include('includes/head') %>
 <%- include('includes/nav') %>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
-
-    <% if(Sections.length > 0) { %>
-      <div class="responsive-table">
-          <% Sections.forEach(async function (corpo) { %>
-           <h1><%= corpo.nameSection %></h1>
-           <% titulos.forEach( function (titulo){ %>
-            <a href="/texto/show/<%= titulo._id %>"><%= titulo.titulo %></a>
+<main>
+	<div>
+		<% Sections.forEach(async function (corpo) { %>
+			<section class="mt-3" id="<%= corpo.nameSection %>">
+				<h2><%= corpo.nameSection %></h2>
+				<ul>
+					<% titulos.forEach( function (titulo){ %>
+            <% if(corpo.id_article.indexOf(titulo._id) != -1) { %>
+							<li class=""><a href="<%= titulo.titulo %>"><%= titulo.titulo %></a></li>
+              <% if(user){ %>
+              <p><a class="btn btn-danger" href="/section/removeId/<%= corpo._id%>/<%= titulo._id %>" role="button">Remover desta seção</a></p>
+              <% } %>
+							<%} %>
           <%})%>
-          <% }); %>
-      </div>
-      <% };%>
-    
-    <div class="col-lg-2"></div>
-  </div>
-</div>
+				</ul>
+			</section>
+			<% });%>
+	</div>
+	<nav class="section-nav">
+    <% if(Sections.length > 0) { %>
+		<ol>
+      <% Sections.forEach(async function (corpo) { %>
+			<li><a href="#<%= corpo.nameSection %>"><%= corpo.nameSection.toUpperCase() %></a></li>
+				<ul>
+					<% titulos.forEach( function (titulo){ %>
+            <% if(corpo.id_article.indexOf(titulo._id) != -1) { %>
+							<li class=""><a href="#endpoints--<%= titulo.titulo %>"><%= titulo.titulo %></a></li>
+							<%} %>
+          <%})%>
+				</ul>
+			</li>
+      <% }); %>
+		</ol>
+    <% };%>
+	</nav>
+</main>
+
 
 <%- include('includes/footer') %>

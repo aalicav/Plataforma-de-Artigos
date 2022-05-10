@@ -1,4 +1,5 @@
 const Texto = require('../models/TextoModel');
+const Section = require('../models/SectionModel');
 
 exports.index = (req, res) => {
   res.render('texto', {
@@ -9,7 +10,18 @@ exports.index = (req, res) => {
 exports.show = async (req, res) => {
   const  id  = req.params.id;
   const textos = await Texto.buscaPorId(id)
-  res.render('texto-completo',{textos})
+  const section = new Section(req.body);
+  const secoes = await section.showAll()
+  let nomeSecao = '';
+  for(let ind in secoes){
+    for (id_text of secoes[ind].id_article){
+      if(id == id_text){
+        nomeSecao = secoes[ind].nameSection;
+        break
+      }
+    }
+  }
+  res.render('texto-completo',{textos, nomeSecao})
 }
 
 exports.register = async (req, res) => {

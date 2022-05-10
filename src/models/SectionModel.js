@@ -42,4 +42,8 @@ Section.prototype.show = async function (id) {
   return texto;
 }
 
+Section.prototype.removeText = async function (id, id1) {
+  this.Section = await SectionModel.findByIdAndUpdate(id, {$pull:{id_article:id1}}, { new: true })
+}
+
 module.exports = Section;

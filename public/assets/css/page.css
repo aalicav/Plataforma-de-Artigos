@@ -1,0 +1,63 @@
+.post-caption__theme {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: solid 2px #5aaacf;
+  margin-bottom: 30px;
+  width: fit-content;
+}
+
+.post-caption__title {
+  color: #000;
+  font-family: lora,serif;
+  font-size: 2.8125rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -1.3px;
+  line-height: 3.0625rem;
+  margin-bottom: 15px;
+  text-align: left;
+  text-transform: none;
+}
+.subtitulo {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    color: rgba(0,0,0,.6);
+    font-family: aktiv-grotesk,sans-serif;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: .1px;
+    line-height: 1.75rem;
+    margin-bottom: 27px;
+    padding-bottom: 25px;
+    text-align: left;
+    max-width: fit-content;
+}
+body{
+  color: #333;
+  font-family: aktiv-grotesk,-apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: max-content;
+  color: #333;
+  font-size: 1.125rem;
+  letter-spacing: .1px;
+  line-height: 2rem;
+  margin-bottom: 25px;
+}
+
+.corpo{
+  max-width: 1000px;
+  max-height: max-content;
+}
