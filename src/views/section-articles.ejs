@@ -1,5 +1,7 @@
 <%- include('includes/head') %>
 <%- include('includes/nav') %>
+<link rel="stylesheet" href="../../../public/assets/css/data.css">
+
 <main>
 	<div>
 		<% Sections.forEach(async function (corpo) { %>
@@ -8,7 +10,7 @@
 				<ul>
 					<% titulos.forEach( function (titulo){ %>
             <% if(corpo.id_article.indexOf(titulo._id) != -1) { %>
-							<li class=""><a href="<%= titulo.titulo %>"><%= titulo.titulo %></a></li>
+							<li class=""><a href="/texto/show/<%= titulo._id %>"><%= titulo.titulo %></a></li>
               <% if(user){ %>
               <p><a class="btn btn-danger" href="/section/removeId/<%= corpo._id%>/<%= titulo._id %>" role="button">Remover desta seção</a></p>
               <% } %>
