@@ -1,3 +1,6 @@
+body{
+  font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
+}
 .whatsapp {
   position: fixed;
   width: 60px;
@@ -17,3 +20,34 @@
   margin-left:auto;
 }
 
+.back-jumbtron{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/direitoBancario.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.titulo{
+  word-wrap: break-word;
+  line-height: 1em;
+  font-style: normal;
+  text-transform: none;
+  color: #fff!important;
+  font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+  font-weight: 600!important;
+}
+.sizes{
+  height: 100vh;  
+}
+#titulo_maior{
+  color:rgb(1, 1, 212);
+  font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
+  margin-bottom: 0;
+}
+#subtitulo{
+  font-size: 12pt;
+}

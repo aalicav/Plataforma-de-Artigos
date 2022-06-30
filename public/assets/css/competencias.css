@@ -1,0 +1,9 @@
+#alinhamento{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
+  font-size: larger;
+  
+}
